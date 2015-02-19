@@ -2,9 +2,9 @@
   "name": "urlparser",
   "version": "0.0.0",
   "description": "URL parser to pull info from a url",
-  "main": "lib/index.js",
+  "main": "lib/urlparser.es6.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp karma"
   },
   "repository": {
     "type": "git",
