@@ -2,7 +2,7 @@
   "name": "urlparser",
   "version": "0.0.0",
   "description": "URL parser to pull info from a url",
-  "main": "lib/urlparser.es6.js",
+  "main": "index.js",
   "scripts": {
     "test": "gulp karma"
   },
@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/djforth/urlparser",
   "devDependencies": {
-    "6to5ify": "^4.1.1",
     "babelify": "^5.0.3",
     "browserify": "^8.1.3",
     "gulp": "^3.8.11",
+    "gulp-babel": "^4.0.0",
     "gulp-karma": "0.0.4",
     "gulp-rename": "^1.2.0",
     "gulp-strip-debug": "^1.0.2",
