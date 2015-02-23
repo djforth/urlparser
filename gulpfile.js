@@ -10,5 +10,5 @@ gulp.task('console_strip', function () {
         .pipe(gulp.dest('./app/assets/javascripts/'));
 });
 
-gulp.task('build', ["app", "console_strip"])
+gulp.task('build', ["app", "npm_build", "console_strip"])
 gulp.task('main', ["app:watch", "karma"])

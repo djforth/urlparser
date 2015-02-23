@@ -12,7 +12,7 @@ var URLParser = (function () {
     this.uri, this.uri_parsed, this.uri_split;
 
     //Gets existing path unless passed to path
-    this.uri = path ? path : this.getURL();
+    this.uri = path != undefined ? path : this.getURL();
 
     //Parsing
     this.uri_split = this.parseURL();
@@ -136,7 +136,7 @@ var URLParser = (function () {
       value: function getURL() {
         //Gets Current Path
         var url = decodeURIComponent(window.location.href);
-        url;
+        return url;
       },
       writable: true,
       configurable: true
@@ -151,22 +151,26 @@ var URLParser = (function () {
             i = undefined,
             l = undefined;
         // Parse query into an object - http://www.joezimjs.com/javascript/3-ways-to-parse-a-query-string-in-a-url/
-        qs = queryString.replace(/^\?/, "");
+        if (queryString) {
+          qs = queryString.replace(/^\?/, "");
 
-        queries = qs.split("&");
+          queries = qs.split("&");
 
-        params = queries.length >= 1 && queries[0] != "" ? {} : null;
+          params = queries.length >= 1 && queries[0] != "" ? {} : null;
 
-        if (params) {
-          l = queries.length;
-          for (i = 0; i < l; i++) {
-            temp = queries[i].split("=");
-            t = temp[0];
-            params[t] = temp[1];
+          if (params) {
+            l = queries.length;
+            for (i = 0; i < l; i++) {
+              temp = queries[i].split("=");
+              t = temp[0];
+              params[t] = temp[1];
+            }
           }
+
+          return params;
         }
 
-        return params;
+        return null;
       },
       writable: true,
       configurable: true
