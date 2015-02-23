@@ -1,6 +1,6 @@
 {
   "name": "urlparser",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "URL parser to pull info from a url",
   "main": "index.js",
   "scripts": {
