@@ -5,35 +5,37 @@ var _ = require('lodash')
 describe('URLParser', function(){
   let urlparser
 
-  beforeEach(function(){
-    urlparser = new URLParser('http://www.test.com:3000/mytest/test/123?test=foo&test2=bar#hash1/hash2', false)
-  })
-
-  it('Should exist',function(){
-    expect(urlparser).not.toBeNull()
-    expect(urlparser).toBeDefined()
-  })
-
-  it("Should Parse URL", function() {
-    var parsed = urlparser.parseURL()
-    // console.log(parsed)
-    expect(_.isArray(parsed)).toBeTruthy()
-    expect(parsed.length).toEqual(8)
-  });
-
-  describe('splitPaths', function() {
-    it("split path no startign slash", function() {
-      spyOn(urlparser, "checkSlash").and.returnValue(false)
-      var split = urlparser.splitPath('mytest/test/123')
-      expect(split.length).toEqual(3)
-      expect(split).toContain('mytest')
+  describe('when url is passed', function() {
+    beforeEach(function(){
+      urlparser = new URLParser('http://www.test.com:3000/mytest/test/123?test=foo&test2=bar#hash1/hash2')
     });
 
-    it("split path with slash", function() {
-      spyOn(urlparser, "checkSlash").and.returnValue(true)
-      var split = urlparser.splitPath('/mytest/test/123')
-      expect(split.length).toEqual(3)
-      expect(split).toContain('mytest')
+    it('Should exist',function(){
+      expect(urlparser).not.toBeNull()
+      expect(urlparser).toBeDefined()
+    })
+
+    it("Should Parse URL", function() {
+      var parsed = urlparser.parseURL()
+      // console.log(parsed)
+      expect(_.isArray(parsed)).toBeTruthy()
+      expect(parsed.length).toEqual(8)
+    });
+
+    describe('splitPaths', function() {
+      it("split path no startign slash", function() {
+        spyOn(urlparser, "checkSlash").and.returnValue(false)
+        var split = urlparser.splitPath('mytest/test/123')
+        expect(split.length).toEqual(3)
+        expect(split).toContain('mytest')
+      });
+
+      it("split path with slash", function() {
+        spyOn(urlparser, "checkSlash").and.returnValue(true)
+        var split = urlparser.splitPath('/mytest/test/123')
+        expect(split.length).toEqual(3)
+        expect(split).toContain('mytest')
+      });
     });
 
     describe('check_ie', function() {
@@ -137,6 +139,25 @@ describe('URLParser', function(){
 
     });
   });
+
+
+
+  describe('when url not passed', function() {
+    beforeEach(function(){
+      urlparser = new URLParser()
+    });
+
+    it('Should exist',function(){
+      expect(urlparser).not.toBeNull()
+      expect(urlparser).toBeDefined()
+    })
+
+    it("should set url to correct url", function() {
+      expect(urlparser.uri).toEqual(window.location.href)
+    });
+  });
+
+
 
 
 
