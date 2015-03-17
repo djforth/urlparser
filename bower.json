@@ -1,0 +1,22 @@
+{
+  "name": "urlparser",
+  "main": "dist/urlparser.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/djforth/urlparser",
+  "authors": [
+    "Adrian Stainforth <adrian@morsedigtial.com>"
+  ],
+  "description": "URL Parsing Utility",
+  "keywords": [
+    "URL",
+    "Parsing",
+    "Utility"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "specs"
+  ]
+}
