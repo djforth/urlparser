@@ -1,4 +1,7 @@
 # URLparser
+
+[![Build Status](https://semaphoreci.com/api/v1/projects/f441515a-1fe0-4950-b3cf-f2b00c5b016b/381659/badge.png)](https://semaphoreci.com/djforth/urlparser)
+
 JS URL Parsing utility for breaking apart a url into data, it has a number of methods that allow you to extract:
 
 * fullpath
