@@ -1,4 +1,4 @@
-var URLParser = require('../../lib/urlparser.es6.js')
+var URLParser = require('../lib/urlparser.es6.js')
 
 var _ = require('lodash')
 

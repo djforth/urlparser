@@ -12,6 +12,10 @@ var destFolder = './dist';
 var destFile   = "urlparser.js"
 var sourceFile = './lib/urlparser.es6.js'
 
+var testFolder = './spec';
+var testFile   = "app_tests.js"
+var sourceTest = './spec/app_tests.es6.js'
+
 function bundleShare(b, destFile) {
   b.bundle()
    .on('error', function(err){
@@ -22,6 +26,16 @@ function bundleShare(b, destFile) {
    .pipe(gulp.dest(destFolder));
 }
 
+function bundleShareTest(b, destFile) {
+  b.bundle()
+   .on('error', function(err){
+      console.log(err.message);
+      this.end();
+    })
+   .pipe(source(destFile))
+   .pipe(gulp.dest(testFolder));
+}
+
 gulp.task("app", function () {
 
   var bundle = browserify({entries: [sourceFile],extensions: ['.js'], debug:false});
@@ -30,6 +44,16 @@ gulp.task("app", function () {
   bundle.transform(uglifyify)
 
   return bundleShare(bundle, "urlparser.min.js")
+});
+
+gulp.task("app_test", function () {
+
+  var bundle = browserify({entries: [sourceTest],extensions: ['.js'], debug:false});
+
+  bundle.transform(babelify)
+  bundle.transform(uglifyify)
+
+  return bundleShareTest(bundle, testFile)
 });
 
 

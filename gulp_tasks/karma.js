@@ -6,7 +6,7 @@ var testFiles = [
   'specs/app_test.js'
 ];
 
-var karma_config = "./gulp_tasks/karma.conf.js"
+var karma_config = "./karma.conf.js"
 
 // <<<<<<<<<<<<<< Karma tasks >>>>>>>>>>>>>
 
