@@ -1,10 +1,10 @@
 {
-  "name": "urlparser",
+  "name": "@djforth/urlparser",
   "version": "0.0.3",
   "description": "URL parser to pull info from a url",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/karma start --browsers PhantomJS --single-run",
+    "test": "karma start --browsers PhantomJS --single-run",
     "test:watch": "karma start --browsers PhantomJS",
     "test:ie9": "karma start --single-run --browsers \"IE9 - Win7\"",
     "test:ie10": "karma start --single-run --browsers \"IE10 - Win7\"",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/djforth/urlparser.git"
+    "url": "git+https://github.com/djforth/urlparser.git"
   },
   "keywords": [
     "URL Parser",
     "URI Parser"
   ],
   "author": "Adrian Stainforth",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/djforth/urlparser/issues"
   },
@@ -52,5 +52,6 @@
     "uglifyify": "^3.0.1",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.3.0"
-  }
+  },
+  "dependencies": {}
 }
