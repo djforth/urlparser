@@ -1,5 +1,5 @@
-var URLParser = require('../lib/urlparser.es6.js')
-
+var URLParser = require('../src/urlparser')
+console.log("URLParser", URLParser)
 var _ = require('lodash')
 
 describe('URLParser', function(){
