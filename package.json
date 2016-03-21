@@ -1,6 +1,6 @@
 {
   "name": "@djforth/urlparser",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "URL parser to pull info from a url",
   "main": "index.js",
   "scripts": {
