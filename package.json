@@ -54,7 +54,6 @@
     "lodash": "^4.6.1"
   },
   "peerDependencies": {
-    "babel-polyfill": "^6.6.4",
     "lodash": "^4.6.1"
   }
 }
