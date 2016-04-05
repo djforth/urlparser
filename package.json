@@ -1,9 +1,9 @@
 {
   "name": "@djforth/urlparser",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "URL parser to pull info from a url",
   "main": "index.js",
-   "babel": {
+  "babel": {
     "presets": [
       "es2015"
     ]
