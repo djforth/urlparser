@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "URL parser to pull info from a url",
   "main": "index.js",
+   "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
   "scripts": {
     "build": "babel src -x '.js'  -d lib",
     "build:watch": "babel src -x '.js' -w --source-maps  -d lib",
