@@ -1,0 +1,6 @@
+{
+
+  "karma": {
+    "input": "./__tests__/urlParser_spec.js"
+  }
+}
