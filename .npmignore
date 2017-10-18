@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 __tests__
 src
 .apconfig
@@ -8,3 +9,8 @@ public
 config
 .stylelintrc
 postcss.config.js
+=======
+/spec
+/src
+.eslintrc.js
+>>>>>>> origin/v1.0.0

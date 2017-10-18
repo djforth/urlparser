@@ -11,14 +11,14 @@ class URLParser{
     if (this.uri_split){
       this.uri_parsed = {
         fullpath: this.uri_split[0]
-        , protocol: this.uri_split[1] // => "http:"
-        , hostname: this.uri_split[3] // => "example.com"
-        , port: this.uri_split[4] // => "3000"
-        , pathname: this.uri_split[5] // => "pathname/test"
-        , pathsplit: this.splitPath(this.uri_split[5])  // => "['pathname', 'test']"
-        , fullquery: this.uri_split[6]  // => "?search=test"
-        , query: this.parseQuery(this.uri_split[6]) // {seach:"test"}
-        , hash: this.uri_split[7] // => "#hash"
+        , protocol: this.uri_split[1] // => 'http:'
+        , hostname: this.uri_split[3] // => 'example.com'
+        , port: this.uri_split[4] // => '3000'
+        , pathname: this.uri_split[5] // => 'pathname/test'
+        , pathsplit: this.splitPath(this.uri_split[5])  // => '['pathname' 'test']'
+        , fullquery: this.uri_split[6]  // => '?search=test'
+        , query: this.parseQuery(this.uri_split[6]) // {seach:'test'}
+        , hash: this.uri_split[7] // => '#hash'
       };
 
       return this.uri_parsed;
@@ -27,13 +27,12 @@ class URLParser{
     return null;
   }
 
-
   constructor(path){
     // Setup
-    this.uri, this.uri_parsed, this.uri_split;
+    this.uri_parsed = {};
 
     // Gets existing path unless passed to path
-    this.uri = (path != undefined) ? path : this.getURL();
+    this.uri = (path === undefined) ? this.getURL() : path;
 
     // Parsing
     this.uri_split = this.parseURL();
@@ -44,13 +43,13 @@ class URLParser{
   }
 
   getProperty(prop){
-    let start = prop.search(/\[/g);
-    let end = prop.search(/\]/g);
-    return (start < end) ? prop.slice(start+1, end) : prop;
+    let start, end;
+    start = prop.search(/\[/g);
+    end = prop.search(/\]/g);
+    return (start < end) ? prop.slice(start + 1, end) : prop;
   }
 
   // <<<<<< Get properties >>>>>>
-
   getHostname(){
     return (this.uri_parsed) ? this.uri_parsed.hostname : null;
   }
@@ -103,11 +102,11 @@ class URLParser{
 
       queries = qs.split('&');
 
-      params  = (queries.length >= 1 && queries[0] != '') ? {} : null;
+      params  = (queries.length >= 1 && queries[0] !== '') ? {} : null;
 
       if (params){
-        l=queries.length;
-        for (i=0; i < l; i++){
+        l = queries.length;
+        for (i = 0; i < l; i++){
           temp = queries[i].split('=');
           t = temp[0];
           params[t] = temp[1];
@@ -119,7 +118,6 @@ class URLParser{
 
     return null;
   }
-
 
   parseURL(){
     // Regex taken from is from javascript, the good parts by Douglas Crockford - Best performance (http://jsperf.com/url-parse2)
