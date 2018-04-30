@@ -3,50 +3,49 @@
   "env": {
     "production": {
       "plugins": [
-        "lodash"
-        , "add-module-exports"
-      ]
-      , "presets": [
-        ["env", {
-          "modules": "umd",
-          "targets": {
+        "lodash",
+        "add-module-exports"
+      ],
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
               "node": 4,
               "browsers": [
-                "last 2 versions",
-                "chrome >= 55",
-                "IE >= 11"
+                ">0.25%",
+                "IE >= 11",
+                "not op_mini all"
               ],
               "uglify": true
             },
             "useBuiltIns": true
-        }]
-        , "minify"
+          }
+        ],
+        "minify"
       ]
     },
     "test": {
       "plugins": [
         [
-          "istanbul",
-          {
-            "exclude": [
-              "**/*_spec.js"
-            ]
-          }
-        ],
-        "rewire"
+          "istanbul"
+        ]
       ],
       "presets": [
-        ["env", {
-          "modules": false,
-          "targets": {
-            "browsers": [
-              "last 2 versions",
-              "chrome >= 55",
-              "IE >= 11"
-            ]
-          },
-          "useBuiltIns": true
-        }]
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                ">0.25%",
+                "IE >= 11",
+                "not op_mini all"
+              ]
+            },
+            "useBuiltIns": true
+          }
+        ]
       ]
     }
   }

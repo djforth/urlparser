@@ -24,11 +24,11 @@ npm install urlparser
 
 ```
 
-or via bower
+or via yarn
 
 ``` bash
 
-bower install urlparser
+yarn add urlparser
 
 ```
 

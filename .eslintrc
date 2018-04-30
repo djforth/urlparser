@@ -1,6 +1,3 @@
 {
-  "extends": "morsedigital",
-  "rules": {
-    "require-jsdoc": 0
-  }
+  "extends": "morsedigital-prettier"
 }
